@@ -208,11 +208,11 @@ h1.titulo-producto {
 
 .encontranos-mapa {
     text-align: center;
-    margin: 50px ;
+    margin: 50px;
 }
 
 .encontranos {
-    padding: 20px ;
+    padding: 20px;
     border: 1px solid black;
     border-radius: 15px;
     background-color: rgb(247, 233, 197);
@@ -248,7 +248,8 @@ h1.titulo-producto {
         padding: 8px 15px;
     }
 
-    .caja-titulo, .titulo-producto {
+    .caja-titulo,
+    .titulo-producto {
         max-width: 90%;
     }
 
@@ -278,7 +279,8 @@ h1.titulo-producto {
         gap: 15px;
     }
 
-    .caja-titulo, .titulo-producto {
+    .caja-titulo,
+    .titulo-producto {
         max-width: 70%;
     }
 
