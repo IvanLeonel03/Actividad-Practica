@@ -1,3 +1,21 @@
+@mixin flex-container($justify: space-between, $align: center, $gap: 0, $direction: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+    flex-direction: $direction;
+}
+
+@mixin link-style($color: black, $bg: white, $padding: 10px 20px, $radius: 5px) {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: $color;
+    padding: $padding;
+    background-color: $bg;
+    border-radius: $radius;
+    transition: background-color 1s;
+}
+
 /* Barra de navegación */
 .navbar {
     position: sticky;
@@ -10,9 +28,7 @@
 .navegacion {
     width: 100%;
     background-color: rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex-container($gap: 20px);
     padding: 20px;
 }
 
@@ -26,9 +42,7 @@
 /* Menú de navegación */
 .navegacion ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+    @include flex-container($justify: center, $gap: 20px);
     flex-grow: 1;
 }
 
@@ -39,13 +53,7 @@
 
 /* Enlaces del menú */
 .navegacion ul li a {
-    text-decoration: none;
-    text-transform: capitalize;
-    color: black;
-    padding: 10px 20px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    transition: background-color 1s;
+    @include link-style;
 }
 
 /* Efecto hover en enlaces */

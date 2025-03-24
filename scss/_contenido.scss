@@ -1,22 +1,38 @@
-* ----------- CONTENIDO PRINCIPAL ----------- */
-main {
+
+@mixin centered-text($padding: 20px) {
     text-align: center;
-    padding: 20px;
+    padding: $padding;
+}
+
+@mixin bordered-box($bg-color, $border-color: black, $radius: 15px, $padding: 20px) {
+    border: 1px solid $border-color;
+    border-radius: $radius;
+    background-color: $bg-color;
+    padding: $padding;
+    margin: 20px auto;
+}
+
+@mixin grid-layout($columns: 2, $gap: 20px) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: $gap;
+}
+
+
+/* ----------- CONTENIDO PRINCIPAL ----------- */
+main {
+    @include centered-text;
 }
 
 .caja-titulo {
-    text-align: center;
-    padding: 2px;
-    margin: 20px auto;
-    border: 1px solid black;
-    border-radius: 15px;
-    background-color: rgb(247, 233, 197);
+    @include bordered-box(rgb(247, 233, 197));
     max-width: 50%;
 }
 
 main h1,
 main h2 {
     text-decoration: overline;
+    text-shadow: 5px 5px 10px #000000;
 }
 
 main h1 {
@@ -35,29 +51,20 @@ main h2 {
     padding: 20px;
 }
 
-
 /* ----------- FOOTER ----------- */
 .fondofooter {
     background-color: rgb(228, 208, 153);
     padding: 8px;
 }
 
-.redesSociales-footer {
-    margin-bottom: 15px;
-}
-
+.redesSociales-footer,
 .contacto-footer {
     margin-bottom: 15px;
     text-align: center;
 }
 
 .icono-instagram,
-.icono-tiktok {
-    width: 25px;
-    height: 25px;
-    margin: 5px;
-}
-
+.icono-tiktok,
 .icono-whatsapp {
     width: 25px;
     height: 25px;
@@ -66,9 +73,7 @@ main h2 {
 
 /* ----------- NOSOTROS ----------- */
 .seccion-nosotros {
-    margin-top: 50px;
-    margin-left: 20px;
-    margin-right: 50%;
+    margin: 50px 50% 0 20px;
 }
 
 .nosotros {
@@ -76,77 +81,45 @@ main h2 {
 }
 
 /* ----------- PRODUCTOS ----------- */
-
 h1.titulo-producto {
+    @include bordered-box(rgb(247, 233, 197));
     text-align: center;
     color: #ff0000;
-    padding: 2px;
-    margin: 20px auto;
-    border: 1px solid black;
-    border-radius: 15px;
-    background-color: rgb(247, 233, 197);
     max-width: 50%;
 }
 
 .contenedor-grid {
+    @include grid-layout(2);
     padding: 10px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
     color: black;
 }
 
 .columna-productos {
-    padding: 20px;
-    margin: 20px auto;
-    border: 1px solid black;
-    border-radius: 15px;
-    background-color: rgb(255, 255, 255);
+    @include bordered-box(rgb(255, 255, 255));
 }
 
 /* ----------- CONTACTOS ----------- */
-
 .contactos {
     text-align: center;
 }
 
-.contacto-whatsapp {
-    padding: 20px;
-    margin: 20px;
-    border: 1px solid black;
-    border-radius: 15px;
-    background-color: rgb(247, 233, 197);
-}
-
+.contacto-whatsapp,
 .redes-sociales-contacto {
-    padding: 20px;
-    margin: 20px;
-    border: 1px solid black;
-    border-radius: 15px;
-    background-color: rgb(247, 233, 197);
+    @include bordered-box(rgb(247, 233, 197));
 }
 
 .img-barbershop {
-    text-align: center;
-    padding: 20px;
-    margin: 20px;
-    border: 1px solid black;
-    border-radius: 15px;
-    background-color: rgb(255, 255, 255);
+    @include bordered-box(rgb(255, 255, 255));
 }
 
 /* ----------- ENCONTRANOS ----------- */
-
 .encontranos-mapa {
     text-align: center;
     margin: 50px;
 }
 
 .encontranos {
-    padding: 20px;
-    border: 1px solid black;
-    border-radius: 15px;
-    background-color: rgb(247, 233, 197);
+    @include bordered-box(rgb(247, 233, 197));
 }
 
 .mapa {
